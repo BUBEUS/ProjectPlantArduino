@@ -1,0 +1,14 @@
+2025-06-25 20:51:51,169 - INFO - No existing weather records found. Collecting last 7 days of data.
+2025-06-25 20:51:51,169 - INFO - Collecting data from 2025-06-18 20:51:51.169662 to 2025-06-25 20:51:51.169662
+2025-06-25 20:51:51,422 - INFO - Successfully collected and stored 168 new records, skipped 0 duplicates for date range
+2025-06-25 20:51:51,423 - INFO - Collecting data from 2025-06-25 19:51:51.423701 to 2025-06-25 20:51:51.423701
+2025-06-25 20:51:51,600 - INFO - Successfully collected and stored 0 new records, skipped 1 duplicates for date range
+2025-06-25 20:53:08,881 - INFO - No significant weather data gap found. Database is up to date.
+2025-06-25 20:53:08,882 - INFO - Collecting data from 2025-06-25 19:53:08.882117 to 2025-06-25 20:53:08.882117
+2025-06-25 20:53:09,112 - INFO - Successfully collected and stored 0 new records, skipped 1 duplicates for date range
+2025-06-25 20:55:44,308 - INFO - No significant weather data gap found. Database is up to date.
+2025-06-25 20:55:44,308 - INFO - Collecting data from 2025-06-25 19:55:44.308688 to 2025-06-25 20:55:44.308688
+2025-06-25 20:55:44,508 - INFO - Successfully collected and stored 0 new records, skipped 1 duplicates for date range
+2025-06-25 21:06:45,354 - INFO - No significant weather data gap found. Database is up to date.
+2025-06-25 21:06:45,355 - INFO - Collecting data from 2025-06-25 20:06:45.355404 to 2025-06-25 21:06:45.355404
+2025-06-25 21:06:45,582 - INFO - Successfully collected and stored 1 new records, skipped 0 duplicates for date range
