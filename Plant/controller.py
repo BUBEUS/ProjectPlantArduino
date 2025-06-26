@@ -14,7 +14,7 @@ class SystemController:
 
 
     def run(self) -> None:
-        """Uruchamia główną pętlę aplikacji GUI."""
+        """Runs the main GUI application loop."""
         self.root.mainloop()
 
 

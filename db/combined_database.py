@@ -5,14 +5,14 @@ from typing import List, Tuple
 
 
 class PlantDatabase:
-    """Klasa do zarządzania bazą danych z danymi roślinki i pogody"""
+    """Class for managing database with plant and weather data"""
     
     def __init__(self, db_path: str = "data/plant_data.db"):
         self.db_path = db_path
         self.init_database()
     
     def init_database(self):
-        """Inicjalizuje bazę danych i tworzy tabele jeśli nie istnieją"""
+        """Initializes database and creates tables if they don't exist"""
         # Ensure the data directory exists
         os.makedirs(os.path.dirname(self.db_path), exist_ok=True)
         
@@ -52,7 +52,7 @@ class PlantDatabase:
             conn.commit()
     
     def save_reading(self, moisture: int, light: int, temperature: int, time_of_day: int):
-        """Zapisuje odczyt czujników do bazy danych"""
+        """Saves sensor reading to database"""
         timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         
         with sqlite3.connect(self.db_path) as conn:
@@ -64,7 +64,7 @@ class PlantDatabase:
             conn.commit()
     
     def get_all_readings(self) -> List[Tuple]:
-        """Pobiera wszystkie odczyty z bazy danych"""
+        """Gets all readings from database"""
         with sqlite3.connect(self.db_path) as conn:
             cursor = conn.cursor()
             cursor.execute('''
@@ -75,7 +75,7 @@ class PlantDatabase:
             return cursor.fetchall()
     
     def get_recent_readings(self, limit: int = 100) -> List[Tuple]:
-        """Pobiera ostatnie N odczytów z bazy danych"""
+        """Gets last N readings from database"""
         with sqlite3.connect(self.db_path) as conn:
             cursor = conn.cursor()
             cursor.execute('''
@@ -87,14 +87,14 @@ class PlantDatabase:
             return cursor.fetchall()
     
     def clear_database(self):
-        """Czyści wszystkie dane z bazy danych"""
+        """Clears all data from database"""
         with sqlite3.connect(self.db_path) as conn:
             cursor = conn.cursor()
             cursor.execute('DELETE FROM sensor_readings')
             conn.commit()
     
     def get_database_stats(self) -> dict:
-        """Zwraca statystyki bazy danych"""
+        """Returns database statistics"""
         with sqlite3.connect(self.db_path) as conn:
             cursor = conn.cursor()
             cursor.execute('SELECT COUNT(*) FROM sensor_readings')
