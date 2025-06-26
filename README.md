@@ -1,6 +1,13 @@
 # Plant Monitoring System
 
 A comprehensive plant monitoring system that combines plant sensor data collection with weather data monitoring for Bydgoszcz, Poland.
+---
+![image](https://github.com/user-attachments/assets/1646f752-af92-45c9-b683-522f2a6fd44c)
+---
+
+## Project goal
+
+The final aim of the project is to create a simple application that assists in taking care of a potted plant. The interface should display conditions such as soil moisture, sunlight exposure percentage, and ambient temperature. Data will be collected and transmitted via Arduino, as well as gathered from other available sources (e.g., Meteostat). The collected data will be analyzed and presented in the form of graphs. In the future, a virtual assistant may be added to help with plant care.
 
 ## Project Structure
 
@@ -69,29 +76,15 @@ pip install -r requirements.txt
 
 ## Usage
 
-### 🌿 Plant Monitoring (Default)
+### 🌿 Plant Monitoring
 
-Run the plant monitoring GUI:
+Run the plant monitoring GUI & Weather Collector:
 
 ```bash
 python main.py
-# or
-python main.py --mode plant
 ```
 
-### 🌦️ Weather Data Collection
-
-Run weather collector once (test mode):
-
-```bash
-python main.py --mode weather-once
-```
-
-Run weather collector continuously:
-
-```bash
-python main.py --mode weather
-```
+Note: If there is no weather data, collector will gather data from last 7 days.
 
 ### 🧹 Weather Data Management
 
@@ -104,8 +97,10 @@ python -m meteo_data.delete_records
 Check weather database contents:
 
 ```bash
-sqlite3 data/weather_data.db "SELECT * FROM weather_data ORDER BY date DESC, time DESC LIMIT 10;"
+sqlite3 data/plant_data.db "SELECT * FROM weather_data ORDER BY date DESC, time DESC LIMIT 10;"
 ```
+
+Or open data/plant_data.db via data browser like DB Browser
 
 ## Configuration
 
@@ -145,3 +140,11 @@ The project follows a modular architecture:
 
 - **matplotlib** — Enhanced data visualization
 - **numpy** — Numerical computations
+
+## Screenshots
+---
+![image](https://github.com/user-attachments/assets/558882c1-84bd-46c8-894d-dd3faf4258de)
+---
+![image](https://github.com/user-attachments/assets/736d9c15-ad76-4e12-a96b-0db1104ba761)
+
+
